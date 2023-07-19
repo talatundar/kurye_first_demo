@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kurye_demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vehicle_type" Type="int" />
+          <Property Name="weight_type" Type="int" />
+          <Property Name="first_address" Type="varchar" MaxLength="200" />
+          <Property Name="final_adress" Type="varchar" MaxLength="200" />
+          <Property Name="first_phone_number" Type="int" />
+          <Property Name="date_time" Type="varchar" MaxLength="50" />
+          <Property Name="first_hour" Type="varchar" MaxLength="50" />
+          <Property Name="final_hour" Type="varchar" MaxLength="50" />
+          <Property Name="first_extra_inf" Type="varchar" MaxLength="500" />
+          <Property Name="final_phone_number" Type="int" />
+          <Property Name="final_extra_inf" Type="varchar" MaxLength="500" />
+          <Property Name="order_act" Type="int" />
+          <Property Name="price" Type="int" />
+          <Property Name="distance" Type="int" />
+          <Property Name="road" Type="int" />
+          <Property Name="order_icerik" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="kurye_demoModelStoreContainer">
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kurye_demoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_type" Type="Int32" />
+          <Property Name="weight_type" Type="Int32" />
+          <Property Name="first_address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="final_adress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="first_phone_number" Type="Int32" />
+          <Property Name="date_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="first_hour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="final_hour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="first_extra_inf" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="final_phone_number" Type="Int32" />
+          <Property Name="final_extra_inf" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="order_act" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="distance" Type="Int32" />
+          <Property Name="road" Type="Int32" />
+          <Property Name="order_icerik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="kurye_demoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kurye_demoModelStoreContainer" CdmEntityContainer="kurye_demoEntities">
+          <EntitySetMapping Name="tbl_Order">
+            <EntityTypeMapping TypeName="kurye_demoModel.tbl_Order">
+              <MappingFragment StoreEntitySet="tbl_Order">
+                <ScalarProperty Name="order_icerik" ColumnName="order_icerik" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="vehicle_type" ColumnName="vehicle_type" />
+                <ScalarProperty Name="weight_type" ColumnName="weight_type" />
+                <ScalarProperty Name="first_address" ColumnName="first_address" />
+                <ScalarProperty Name="final_adress" ColumnName="final_adress" />
+                <ScalarProperty Name="first_phone_number" ColumnName="first_phone_number" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="first_hour" ColumnName="first_hour" />
+                <ScalarProperty Name="final_hour" ColumnName="final_hour" />
+                <ScalarProperty Name="first_extra_inf" ColumnName="first_extra_inf" />
+                <ScalarProperty Name="final_phone_number" ColumnName="final_phone_number" />
+                <ScalarProperty Name="final_extra_inf" ColumnName="final_extra_inf" />
+                <ScalarProperty Name="order_act" ColumnName="order_act" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="distance" ColumnName="distance" />
+                <ScalarProperty Name="road" ColumnName="road" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
